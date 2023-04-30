@@ -31,4 +31,23 @@ todoRouter.get("/todo", function (req, res) {
   });
 });
 
+todoRouter.get("/todo/:id", function (req, res) {
+  let findId = req.params.id;
+
+  let response = {};
+
+  for (let i = 0; i < todoArray.length; i++) {
+    if (todoArray[i].todo_id == findId) {
+      response = todoArray[i];
+    }
+  }
+
+  res.status(200).json({
+    message: "Success.",
+    data: response,
+  });
+});
+
+
+
 module.exports = todoRouter;
