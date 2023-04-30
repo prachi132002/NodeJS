@@ -10,7 +10,23 @@ const todoRouter = express.Router();
 //4.  Delete todo : delete : /todo/:id
 //5.  Update todo : patch : /todo/:id
 
-let todoArray = [];
+let todoArray = [
+  {
+    todo_id: 1,
+    name: "Test",
+    description: "Something",
+  },
+  {
+    todo_id: 2,
+    name: "Test",
+    description: "Something",
+  },
+  {
+    todo_id: 3,
+    name: "Test",
+    description: "Something",
+  },
+];
 
 todoRouter.post("/todo", function (req, res) {
   let todoData = req.body;
@@ -31,6 +47,12 @@ todoRouter.get("/todo", function (req, res) {
   });
 });
 
+
+
+todoRouter.get('/todo/getbyquery', function(req, res) {
+  
+}) 
+
 todoRouter.get("/todo/:id", function (req, res) {
   let findId = req.params.id;
 
@@ -47,7 +69,6 @@ todoRouter.get("/todo/:id", function (req, res) {
     data: response,
   });
 });
-
 
 
 module.exports = todoRouter;

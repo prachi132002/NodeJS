@@ -17,8 +17,6 @@ let arr = [
   },
 ];
 
-
-
 // arr.unshift({ id: 3, name: "3rd todo" });
 // console.log(arr);
 // arr.shift();
@@ -32,22 +30,25 @@ for (let i = 0; i < arr.length; i += 1) {
   }
 }
 
-// console.log(deleteIndex);
+console.log(deleteIndex);
+
+// FINDINDEX
+let findindex = null;
+findindex = arr.findIndex(function (x) {
+  return x.id == 33;
+});
+console.log(`-->`, findindex);
 
 let deletedItems = arr.splice(deleteIndex, 2);
 
 // console.log(arr);
 // console.log(deletedItems);
 
-arr[2] = {
-
-}
+arr[2] = {};
 
 // let arr2 = new Array(3, "hi");
 
 // console.log(arr2);
-
-
 
 // Do these todos with array:
 
